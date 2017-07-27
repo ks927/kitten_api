@@ -1,0 +1,14 @@
+<h1>Kittens API</h1>
+<ul>
+    <li><%= link_to "Create a Kitten", new_kitten_path %></li>
+</ul>
+
+<h3>Created Kittens</h3>
+  <ol>
+<% @kittens.each do |kitten| %>
+      <li><%= link_to kitten.name, kitten_path(kitten) %>
+            <%= link_to "(Delete)", kitten_path(kitten), method: :delete %>
+      </li>
+<% end %>
+  </ol>
+
